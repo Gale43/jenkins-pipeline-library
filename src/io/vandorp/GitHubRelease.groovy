@@ -104,6 +104,7 @@ class GitHubRelease {
         connection.connect()
 
         File binaryFile = new File(filePath)
+        println(filePath)
 
         OutputStream output = connection.getOutputStream()
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(output), true)
