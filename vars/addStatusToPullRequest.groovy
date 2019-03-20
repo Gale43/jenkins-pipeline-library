@@ -9,7 +9,7 @@ def call(String status, String hash, String project) {
     withCredentials([[$class: 'StringBinding', credentialsId: 'github_oath_token', variable: 'GITHUB_ACCESS_TOKEN']]) {
         def githubToken = "${GITHUB_ACCESS_TOKEN}"
         def apiUrl = new URL("https://api.github.com/repos/${project}/statuses/${hash}")
-        echo "adding ${comment} to ${apiUrl}"
+        echo "adding ${status} to ${apiUrl}"
         try {
             def HttpURLConnection connection = apiUrl.openConnection()
             if (githubToken.length() > 0) {
