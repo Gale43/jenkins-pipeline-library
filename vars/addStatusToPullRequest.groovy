@@ -19,7 +19,7 @@ def call(String status, String hash, String project) {
             connection.setDoOutput(true)
             connection.connect()
 
-            def body = "{\"state\": \"${status}\", \"context\": \"continuous-integration/jenkins\"}"
+            def body = "{\"state\": \"${status}\", \"context\": \"continuous-integration/jenkins/default\"}"
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream())
             writer.write(body)
